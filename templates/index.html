@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <title>Diaris!</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/"><i class="fas fa-home"></i> Inici</a>
+      <a href="https://www.lavanguardia.com/"
+        ><i class="fas fa-newspaper"></i> La Vanguardia</a
+      >
+      <a href="https://elpais.com/"><i class="fas fa-globe"></i> El País</a>
+      <a href="https://www.abc.es/"><i class="fas fa-book"></i> ABC</a>
+      <button id="theme-toggle">
+        <i class="fas fa-adjust"></i> Canvia Mode
+      </button>
+    </nav>
+    <p>
+      <i class="fas fa-info-circle"></i> Mira les noticies de La Vanguardia:
+    </p>
+    <ul>
+      <li>
+        <a href="/lavanguardia/deportes"
+          ><i class="fas fa-futbol"></i> Deportes</a
+        >
+      </li>
+      <li>
+        <a href="/lavanguardia/politica"
+          ><i class="fas fa-landmark"></i> Política</a
+        >
+      </li>
+      <li>
+        <a href="/lavanguardia/vida"><i class="fas fa-heart"></i> Vida</a>
+      </li>
+      <li>
+        <a href="/lavanguardia/cultura"
+          ><i class="fas fa-theater-masks"></i> Cultura</a
+        >
+      </li>
+      <li>
+        <a href="/lavanguardia/economia"
+          ><i class="fas fa-chart-line"></i> Economia</a
+        >
+      </li>
+    </ul>
+
+    <div class="carousel">
+      <div class="carousel-container">
+        <img src="/static/img/diaris.jpg" alt="Notícia 1" class="active" />
+        <img src="/static/img/gat.jpg" alt="Notícia 2" />
+        <img src="/static/img/pais.jpg" alt="Notícia 3" />
+      </div>
+      <div class="carousel-buttons">
+        <button onclick="prevSlide()">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button onclick="nextSlide()">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+      <div class="carousel-indicators">
+        <span class="carousel-indicator active" onclick="goToSlide(0)"></span>
+        <span class="carousel-indicator" onclick="goToSlide(1)"></span>
+        <span class="carousel-indicator" onclick="goToSlide(2)"></span>
+      </div>
+    </div>
+
+    <script src="/static/jvs/script.js"></script>
+  </body>
+</html>

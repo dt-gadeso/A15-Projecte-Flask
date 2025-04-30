@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La Vanguardia - {{rss.feed.title}}</title>
+    <link rel="stylesheet" href="/static/css/lavanguardia.css" />
+  </head>
+  <body>
+    <h1>La Vanguardia - <small>{{rss.feed.title}}</small></h1>
+    {% if rss.feed.image %}
+    <p><img src="{{rss.feed.image.href}}" alt="{{rss.feed.title}}" /></p>
+    {% endif %}
+    <p><a href="{{rss.feed.link}}">{{rss.feed.link}}</a></p>
+    {% for item in rss.entries %}
+    <p>
+      <a href="{{item.link}}">{{item.title}}</a>
+    </p>
+    <p>{{item.description}}</p>
+    <p>Created: {{item.published}}</p>
+    <p>Updated: {{item.updated}}</p>
+    <p>Author: {{item.author}}</p>
+    <p>Category: {{item.category}}</p>
+    {% for media in item.media_content %}
+    <p><img src="{{media.url}}" alt="{{item.title}}" /></p>
+    {% endfor %} {% endfor %}
+  </body>
+</html>
